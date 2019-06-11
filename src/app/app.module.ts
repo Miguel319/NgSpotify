@@ -9,6 +9,8 @@ import { ArtistaComponent } from "./componentes/artista/artista.component";
 import { BusquedaComponent } from "./componentes/busqueda/busqueda.component";
 import { NavComponent } from "./componentes/compartido/nav/nav.component";
 import { routes } from "./routes";
+import { NoimgPipe } from './pipes/noimg.pipe';
+import { TarjetasComponent } from './componentes/compartido/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { routes } from "./routes";
     PrincipalComponent,
     ArtistaComponent,
     BusquedaComponent,
-    NavComponent
+    NavComponent,
+    NoimgPipe,
+    TarjetasComponent
   ],
   imports: [
     BrowserModule,
