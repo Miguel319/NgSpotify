@@ -13,7 +13,14 @@ export class PrincipalComponent implements OnInit {
   constructor(private spotify: SpotifyService) {}
   
   ngOnInit() {
-    this.spotify.getNuevosLanzamientos();
+    this.spotify.getNuevosLanzamientos()
+      .subscribe(
+        (res: any ) =>  {
+          console.log(res.albums.items);
+          this.nuevosLanzamientos = res.albums.items;
+      });
+
+      
   }
 
 }

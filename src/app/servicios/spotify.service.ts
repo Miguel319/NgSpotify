@@ -10,11 +10,11 @@ export class SpotifyService {
   getNuevosLanzamientos() {
     const headers = new HttpHeaders({
       Authorization:
-        "Bearer BQDtGtJrW1A0pVQJrTNMc2e5Q5dm38rbJ_Bv0D6jc1m7dLLE1l6UEw7uu9WC3OpEWkCjreKJaAadqEqoxn4"
+        "Bearer BQBF29X0m6zvLu9ICOQbMnhhmGR2aE6JcZ4Bdr1YJHpW2TNj2in8iQpJ16R3sm3Mrm8RD1F-vjNurlgaOPA"
     });
 
-    this.http
-      .get("https://api.spotify.com/v1/browse/new-releases", { headers })
-      .subscribe(data => console.log(data));
+    return this.http.get("https://api.spotify.com/v1/browse/new-releases", {
+      headers
+    });
   }
 }
