@@ -21,7 +21,7 @@
 
 <div class="row m-5">
   <div class="col">
-    <table class="table">
+    <table class="table table-bordered tabled-striped">
       <thead>
         <tr class="text-light">
           <th>Imagen</th>
@@ -42,11 +42,14 @@
           <td>{{ cancion.album.name }}</td>
           <td>{{ cancion.name }}</td>
           <td>
-            <audio
-              *ngIf="cancion.preview_url; else noPreview"
-              [src]="cancion.preview_url"
-              controls
-            ></audio>
+            <iframe
+              [src]="cancion.uri | domseguro"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
           </td>
           <ng-template #noPreview>
             <p>No reproducible</p>

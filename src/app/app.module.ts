@@ -12,6 +12,7 @@ import { routes } from "./routes";
 import { NoimgPipe } from './pipes/noimg.pipe';
 import { TarjetasComponent } from './componentes/compartido/tarjetas/tarjetas.component';
 import { CargandoComponent } from './componentes/compartido/cargando/cargando.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CargandoComponent } from './componentes/compartido/cargando/cargando.co
     BusquedaComponent,
     NavComponent,
     NoimgPipe,
+    DomseguroPipe,
     TarjetasComponent,
     CargandoComponent
   ],

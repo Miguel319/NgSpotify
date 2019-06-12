@@ -16,9 +16,9 @@ export class TarjetasComponent implements OnInit {
   }
 
   verArtista(valor: any) {
-    let artistaId = valor.item === "artist" ? valor.id :
-     valor.artists[0].id;
+    console.log(valor);
+    let artistaId = valor.type === "artist" ? valor.id : valor.artists[0].id;
 
-     this.router.navigate(['/artista', artistaId]);
+    this.router.navigate(["/artista", artistaId]);
   }
 }
