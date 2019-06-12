@@ -10,6 +10,7 @@ import { SpotifyService } from "src/app/servicios/spotify.service";
 export class ArtistaComponent implements OnInit {
   artista: any;
   cargando: boolean;
+  mejoresCanciones: any[];
 
   constructor(
     private router: ActivatedRoute,
@@ -18,8 +19,10 @@ export class ArtistaComponent implements OnInit {
 
   ngOnInit() {
     this.artista = {};
+    this.mejoresCanciones = [];
     this.router.params.subscribe((res: any) => {
       this.getArtista(res["id"]);
+      this.getMejoresCanciones(res['id']);
     });
   }
 
@@ -34,4 +37,15 @@ export class ArtistaComponent implements OnInit {
       err => console.log(err)
     );
   }
+  
+  getMejoresCanciones(id: string) {
+    this.spotify.getMejoresCanciones(id)
+      .subscribe(
+        (res: any) => {
+          console.log(res);
+          this.mejoresCanciones = res;
+        }
+      )
+  }
+
 }

@@ -13,7 +13,7 @@ export class SpotifyService {
 
     const headers = new HttpHeaders({
       Authorization:
-        "Bearer BQDZBs-Rndn1E9i9Pd9fmpJFW4YWUJzCu6aiddvkPDL-kzHu1wftAcJmld5Cxv2ge-2PFAv9tRKK5XYDHu4"
+        "Bearer BQC9GtWvLjRaiABixie9l55jFzjIGhPJWF-PU7_o1kMrddS72-qdAFlWbffb8sqhi8mn-85Le3a5EwaB8xI"
     });
     return this.http.get(url, { headers });
   }
@@ -35,5 +35,11 @@ export class SpotifyService {
     /*.pipe(
       map(data => data["artists"].items)
     );*/
+  }
+
+  getMejoresCanciones(id: string) {
+    return this.getConsulta(`artists/${id}/top-tracks?country=us`).pipe(
+      map(data => data["tracks"])
+    );
   }
 }
