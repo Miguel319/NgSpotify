@@ -11,6 +11,7 @@ import { NavComponent } from "./componentes/compartido/nav/nav.component";
 import { routes } from "./routes";
 import { NoimgPipe } from './pipes/noimg.pipe';
 import { TarjetasComponent } from './componentes/compartido/tarjetas/tarjetas.component';
+import { CargandoComponent } from './componentes/compartido/cargando/cargando.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TarjetasComponent } from './componentes/compartido/tarjetas/tarjetas.co
     BusquedaComponent,
     NavComponent,
     NoimgPipe,
-    TarjetasComponent
+    TarjetasComponent,
+    CargandoComponent
   ],
   imports: [
     BrowserModule,

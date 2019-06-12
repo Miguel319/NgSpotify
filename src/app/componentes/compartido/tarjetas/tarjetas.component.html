@@ -1,5 +1,9 @@
-<div class="card-columns m-5">
-  <div *ngFor="let valor of valores" class="card">
+<div class="card-columns m-5 animated fadeIn">
+  <div
+    (click)="verArtista(valor)"
+    *ngFor="let valor of valores"
+    class="card puntero"
+  >
     <img [src]="valor.images | noimg" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">{{ valor.name }}</h5>

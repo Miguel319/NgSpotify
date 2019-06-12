@@ -9,13 +9,16 @@ import { SpotifyService } from "src/app/servicios/spotify.service";
 })
 export class PrincipalComponent implements OnInit {
   nuevosLanzamientos: any[] = [];
+  cargando: boolean;
 
   constructor(private spotify: SpotifyService) {}
 
   ngOnInit() {
-    this.spotify.getNuevosLanzamientos()
-    .subscribe(
-      (res: any) => this.nuevosLanzamientos = res
-    );
+    this.cargando = true;
+
+    this.spotify.getNuevosLanzamientos().subscribe((res: any) => {
+      this.nuevosLanzamientos = res;
+      this.cargando = false;
+    });
   }
 }
